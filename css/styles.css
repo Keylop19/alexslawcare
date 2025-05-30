@@ -1,0 +1,180 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuente base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+/* Encabezado */
+.encabezado {
+  background-color: #2e7d32;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero principal */
+.hero {
+  background: url('../images/fondo.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+/* Secciones */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Servicios y proyectos */
+.galeria {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 15px;
+  font-size: 1.1em;
+  color: #444;
+}
+
+/* Testimonios */
+.testimonios {
+  background: #e8f5e9;
+}
+
+.testimonios h2 {
+  font-size: 2em;
+  color: #2e7d32;
+  margin-bottom: 40px;
+}
+
+.slider {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 160px;
+}
+
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.activo {
+  display: block;
+  opacity: 1;
+}
+
+.slide p {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.slide h4 {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.contacto {
+  background: #f1f8e9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #2e7d32;
+}
+
+.contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contacto input,
+.contacto textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contacto button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contacto button:hover {
+  background-color: #1b5e20;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex's Lawn Care</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="encabezado">
+    <img src="images/logo_blanco.png" alt="Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero principal -->
+  <section class="hero">
+    <h1>Servicios Profesionales de Landscaping</h1>
+    <p>Transformamos y cuidamos tu jardín con excelencia y puntualidad.</p>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="galeria">
+      <div class="card">
+        <img src="images/servicio1.jpg" alt="Corte de césped" />
+        <p>Corte de césped profesional</p>
+      </div>
+      <div class="card">
+        <img src="images/servicio2.jpg" alt="Paisajismo" />
+        <p>Paisajismo y diseño exterior</p>
+      </div>
+      <div class="card">
+        <img src="images/servicio3.jpg" alt="Mantenimiento" />
+        <p>Mantenimiento general de jardines</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos recientes -->
+  <section id="proyectos" class="proyectos">
+    <h2>Proyectos Recientes</h2>
+    <div class="galeria">
+      <div class="card">
+        <img src="images/proyecto1.jpg" alt="Proyecto 1" />
+      </div>
+      <div class="card">
+        <img src="images/proyecto2.jpg" alt="Proyecto 2" />
+      </div>
+      <div class="card">
+        <img src="images/proyecto3.jpg" alt="Proyecto 3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="slider">
+      <div class="slide activo">
+        <p>“Alex's Lawn Care dejó mi jardín impecable. Puntuales, profesionales y muy amables.”</p>
+        <h4>– María G.</h4>
+      </div>
+      <div class="slide">
+        <p>“Los contraté para mantenimiento regular y todo ha sido excelente. Los recomiendo totalmente.”</p>
+        <h4>– John S.</h4>
+      </div>
+      <div class="slide">
+        <p>“Mi jardín nunca se había visto tan bien. ¡Gracias Alex's Lawn Care!”</p>
+        <h4>– Carlos M.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+    function mostrarSiguienteSlide() {
+      slides[index].classList.remove('activo');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('activo');
+    }
+    setInterval(mostrarSiguienteSlide, 5000);
+  </script>
+
+
+<section id="contacto" class="contacto">
+  <h2>Contáctanos</h2>
+  <form action="https://formspree.io/f/xldnrdew" method="POST">
+    <input type="text" name="nombre" placeholder="Tu nombre" required />
+    <input type="email" name="email" placeholder="Tu correo electrónico" required />
+    <textarea name="mensaje" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
+
+</body>
+</html>
