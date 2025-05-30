@@ -96,13 +96,61 @@
 
 <section id="contacto" class="contacto">
   <h2>Contáctanos</h2>
-  <form action="https://formspree.io/f/xldnrdew" method="POST">
+
+  <form id="formulario-contacto" action="https://formspree.io/f/xldnrdew" method="POST">
     <input type="text" name="nombre" placeholder="Tu nombre" required />
     <input type="email" name="email" placeholder="Tu correo electrónico" required />
     <textarea name="mensaje" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
     <button type="submit">Enviar mensaje</button>
   </form>
+
+  <!-- Mensaje de confirmación -->
+  <div id="gracias" style="display:none; margin-top: 20px; font-weight: bold; color: #2e7d32;">
+    ¡Gracias! Tu mensaje ha sido enviado.
+  </div>
 </section>
+
+
+<script>
+  const form = document.getElementById("formulario-contacto");
+  const mensajeGracias = document.getElementById("gracias");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // Evita que se recargue la página
+
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (response.ok) {
+      form.reset(); // Limpia el formulario
+      mensajeGracias.style.display = "block"; // Muestra mensaje
+    } else {
+      alert("Hubo un error. Intenta de nuevo.");
+    }
+  });
+</script>
+
+
+<!-- Botones flotantes de redes sociales -->
+<div class="social-float">
+  <a href="https://wa.me/1234567890" target="_blank" class="social-btn whatsapp" title="WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp">
+  </a>
+  <a href="https://facebook.com/tu_pagina" target="_blank" class="social-btn facebook" title="Facebook">
+    <img src="images/facebook.png" alt="Facebook">
+  </a>
+  <a href="https://instagram.com/tu_usuario" target="_blank" class="social-btn instagram" title="Instagram">
+    <img src="images/instagram.png" alt="Instagram">
+  </a>
+</div>
+
+
 
 </body>
 </html>
