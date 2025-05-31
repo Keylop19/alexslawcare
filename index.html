@@ -21,6 +21,12 @@
     </nav>
   </header>
 
+
+  <div class="banner-info">
+  Licensed & Insured | Free Estimates | Residential & Commercial Services
+</div>
+
+
   <!-- Hero principal -->
   <section class="hero">
     <h1>Servicios Profesionales de Landscaping</h1>
@@ -28,39 +34,89 @@
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="servicios">
-    <h2>Nuestros Servicios</h2>
-    <div class="galeria">
-      <div class="card">
-        <img src="images/servicio1.jpg" alt="Corte de césped" />
-        <p>Corte de césped profesional</p>
-      </div>
-      <div class="card">
-        <img src="images/servicio2.jpg" alt="Paisajismo" />
-        <p>Paisajismo y diseño exterior</p>
-      </div>
-      <div class="card">
-        <img src="images/servicio3.jpg" alt="Mantenimiento" />
-        <p>Mantenimiento general de jardines</p>
-      </div>
+<!-- Sección de servicios con nuevos elementos agregados desde la tarjeta -->
+<section id="servicios" class="servicios">
+  <h2>Nuestros Servicios</h2>
+  <div class="galeria">
+    <!-- Servicio existente o anterior -->
+    <div class="card">
+      <img src="images/servicio1.jpg" alt="Corte de césped" />
+      <p>Corte de césped profesional</p>
     </div>
-  </section>
+    <!-- Nuevos servicios integrados -->
+    <div class="card">
+      <img src="images/servicio2.jpg" alt="Trimming services" />
+      <p>Trimming Services</p>
+    </div>
+    <div class="card">
+      <img src="images/servicio3.jpg" alt="Mulching & Edging" />
+      <p>Mulching & Edging</p>
+    </div>
+    <div class="card">
+      <img src="images/servicio4.jpeg" alt="Leaf removal" />
+      <p>Leaf Removal</p>
+    </div>
+    <div class="card">
+      <img src="images/servicio5.jpg" alt="Seeding" />
+      <p>Seeding</p>
+    </div>
+    <div class="card">
+      <img src="images/servicio6.jfif" alt="Planting" />
+      <p>Planting</p>
+    </div>
+    <div class="card">
+      <img src="images/servicio7.jpg" alt="Yard cleanup" />
+      <p>Yard Cleanup</p>
+    </div>
+    <div class="card">
+      <img src="images/servicio8.jpg" alt="Gutter cleaning" />
+      <p>Gutter Cleaning</p>
+    </div>
+    <div class="card">
+      <img src="images/servicio9.jpg" alt="Sprinklers maintenance" />
+      <p>Sprinklers Maintenance</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Proyectos recientes -->
-  <section id="proyectos" class="proyectos">
-    <h2>Proyectos Recientes</h2>
-    <div class="galeria">
-      <div class="card">
-        <img src="images/proyecto1.jpg" alt="Proyecto 1" />
-      </div>
-      <div class="card">
-        <img src="images/proyecto2.jpg" alt="Proyecto 2" />
-      </div>
-      <div class="card">
-        <img src="images/proyecto3.jpg" alt="Proyecto 3" />
-      </div>
+<!-- Sección de Antes y Después -->
+<section class="antes-despues">
+  <h2>Antes y Después</h2>
+  <!-- Slider de comparación visual -->
+  <div class="comparador">
+    <div class="imagen imagen-antes">
+      <img src="images/antes.jpg" alt="Antes del trabajo">
     </div>
-  </section>
+    <div class="imagen imagen-despues">
+      <img src="images/despues.jpg" alt="Después del trabajo">
+    </div>
+    <input type="range" min="0" max="100" value="50" class="slider" id="sliderComparador">
+  </div>
+</section>
+<script>
+  const slider = document.getElementById("sliderComparador");
+  const imagenDespues = document.querySelector(".imagen-despues");
+  slider.addEventListener("input", () => {
+    const porcentaje = slider.value;
+    imagenDespues.style.clipPath = `inset(0 ${100 - porcentaje}% 0 0)`;
+  });
+</script>
+
+<!-- Sección de contacto profesional con datos de la tarjeta -->
+<section class="datos-contacto">
+  <h2>Información de Contacto</h2>
+  <ul>
+    <li>📍 Richmond, VA</li>
+    <li>📞 (804) 237-2509</li>
+    <li>✉️ alexslawncare24@gmail.com</li>
+    <li>📱 Facebook: Alex's Lawn Care</li>
+    <li>🏡 Servicios residenciales y comerciales</li>
+    <li>📅 Mantenimiento semanal y quincenal</li>
+  </ul>
+</section>
+
+
+ 
 
   <!-- Testimonios -->
   <section id="testimonios" class="testimonios">
@@ -92,6 +148,14 @@
     }
     setInterval(mostrarSiguienteSlide, 5000);
   </script>
+
+<section class="sobre-nosotros">
+  <h2>¿Quiénes Somos?</h2>
+  <p>
+    Somos un equipo profesional de landscaping con sede en [tu ciudad]. Nos especializamos en transformar espacios verdes con puntualidad, limpieza y atención a los detalles. Atendemos residencias y negocios con compromiso y experiencia.
+  </p>
+</section>
+
 
 
 <section id="contacto" class="contacto">
