@@ -302,3 +302,40 @@ section {
   width: 28px;
   height: 28px;
 }
+
+/* ======= CARRUSEL BEFORE & AFTER ======= */
+.before-after-carousel {
+  background-color: #f4f4f4;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.before-after-carousel h2 {
+  font-size: 2em;
+  color: #2e7d32;
+  margin-bottom: 30px;
+}
+
+.slider-ba {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: auto;
+}
+
+.ba-slide {
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.ba-slide.active {
+  display: block;
+}
+
+.ba-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
