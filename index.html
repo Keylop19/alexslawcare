@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex's Lawn Care</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="encabezado">
+    <img src="images/logo.png" alt="Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Info Banner -->
+  <div class="banner-info">
+    Licensed & Insured | Free Estimates | Residential & Commercial Services
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Professional Landscaping Services</h1>
+    <p>We transform and maintain your lawn with excellence and punctuality.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="servicios">
+    <h2>Our Services</h2>
+    <div class="galeria">
+      <div class="card"><img src="images/servicio1.jpg" alt="Lawn Mowing"><p>Lawn Mowing</p></div>
+      <div class="card"><img src="images/servicio2.jpg" alt="Trimming"><p>Trimming</p></div>
+      <div class="card"><img src="images/servicio3.jpg" alt="Mulching & Edging"><p>Mulching & Edging</p></div>
+      <div class="card"><img src="images/servicio4.jpeg" alt="Leaf Removal"><p>Leaf Removal</p></div>
+      <div class="card"><img src="images/servicio5.jpg" alt="Seeding"><p>Seeding</p></div>
+      <div class="card"><img src="images/servicio6.jfif" alt="Planting"><p>Planting</p></div>
+      <div class="card"><img src="images/servicio7.jpg" alt="Yard Cleanup"><p>Yard Cleanup</p></div>
+      <div class="card"><img src="images/servicio8.jpg" alt="Gutter Cleaning"><p>Gutter Cleaning</p></div>
+      <div class="card"><img src="images/servicio9.jpg" alt="Sprinkler Maintenance"><p>Sprinkler Maintenance</p></div>
+    </div>
+  </section>
+
+  <!-- Gallery Carousel -->
+  <section id="gallery" class="gallery-carousel">
+    <h2>See Our Transformations</h2>
+    <div class="gallery-slider">
+      <div class="gallery-slide active"><img src="images/ba1.jpeg" alt="Gallery 1"></div>
+      <div class="gallery-slide"><img src="images/ba2.jpeg" alt="Gallery 2"></div>
+      <div class="gallery-slide"><img src="images/ba3.jpeg" alt="Gallery 3"></div>
+      <div class="gallery-slide"><img src="images/ba4.jpeg" alt="Gallery 4"></div>
+      <div class="gallery-slide"><img src="images/ba5.jpeg" alt="Gallery 5"></div>
+      <div class="gallery-slide"><img src="images/ba6.jpeg" alt="Gallery 6"></div>
+      <div class="gallery-slide"><img src="images/ba7.jpeg" alt="Gallery 7"></div>
+      <div class="gallery-slide"><img src="images/ba8.jpeg" alt="Gallery 8"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonios">
+    <h2>What Our Clients Say</h2>
+    <div class="slider">
+      <div class="slide active"><p>"Excellent results and always on time!"</p><h4>– Maria G.</h4></div>
+      <div class="slide"><p>"Their team keeps our yard looking amazing year-round."</p><h4>– John S.</h4></div>
+      <div class="slide"><p>"Highly recommended. Clean, professional and polite."</p><h4>– Carlos M.</h4></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="sobre-nosotros">
+    <h2>About Us</h2>
+    <p>
+      We are a professional landscaping team based in Richmond, VA. We specialize in transforming outdoor spaces with punctuality, cleanliness, and attention to detail. We serve both residential and commercial clients with care and dedication.
+    </p>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="contacto">
+    <h2>Contact Us</h2>
+    <form id="formulario-contacto" action="https://formspree.io/f/xldnrdew" method="POST">
+      <input type="text" name="nombre" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="mensaje" placeholder="Write your message here" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="gracias" style="display:none; margin-top: 20px; font-weight: bold; color: #2e7d32;">
+      Thank you! Your message has been sent.
+    </div>
+  </section>
+
+  <!-- Floating Social Buttons -->
+  <div class="social-float">
+    <a href="https://wa.me/1234567890" target="_blank" class="social-btn whatsapp" title="WhatsApp">
+      <img src="images/whatsapp.png" alt="WhatsApp">
+    </a>
+    <a href="https://facebook.com/yourpage" target="_blank" class="social-btn facebook" title="Facebook">
+      <img src="images/facebook.png" alt="Facebook">
+    </a>
+    <a href="https://instagram.com/yourprofile" target="_blank" class="social-btn instagram" title="Instagram">
+      <img src="images/instagram.png" alt="Instagram">
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const gallerySlides = document.querySelectorAll('.gallery-slide');
+    let galleryIndex = 0;
+    function showNextGallerySlide() {
+      gallerySlides[galleryIndex].classList.remove('active');
+      galleryIndex = (galleryIndex + 1) % gallerySlides.length;
+      gallerySlides[galleryIndex].classList.add('active');
+    }
+    setInterval(showNextGallerySlide, 4000);
+
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+    function mostrarSiguienteSlide() {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }
+    setInterval(mostrarSiguienteSlide, 5000);
+
+    const form = document.getElementById("formulario-contacto");
+    const mensajeGracias = document.getElementById("gracias");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { Accept: "application/json" }
+      });
+      if (response.ok) {
+        form.reset();
+        mensajeGracias.style.display = "block";
+      } else {
+        alert("There was an error. Please try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>
